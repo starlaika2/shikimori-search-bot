@@ -19,6 +19,6 @@ characterInfoHandler.chosenInlineResult(/^character (\w+)$/, async ctx => {
 			url: character.poster?.originalUrl,
 			show_above_text: true,
 		},
-		reply_markup: new InlineKeyboard().url('Shikimori', character.url),
+		reply_markup: new InlineKeyboard().url('Шикимори', character.url),
 	})
 })

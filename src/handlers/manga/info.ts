@@ -22,6 +22,6 @@ mangaInfoHandler.chosenInlineResult(/^manga (\w+)$/, async ctx => {
 		reply_markup: new InlineKeyboard()
 			.switchInlineCurrent('Персонажи', `!manga characters ${id}`)
 			.row()
-			.url('Shikimori', manga.url),
+			.url('Шикимори', manga.url),
 	})
 })
