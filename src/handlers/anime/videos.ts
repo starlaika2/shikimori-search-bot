@@ -19,14 +19,11 @@ animeVideosHandler.inlineQuery(/^!anime videos (\w+)$/, async ctx => {
 		.filter(video => video.kind !== 'episode_preview')
 		.slice(INLINE_MAX_RESULTS * (page - 1), INLINE_MAX_RESULTS * page)
 		.map(video => {
-			const title = video.name ?? VIDEO_KIND[video.kind]
+			const title = video.name || VIDEO_KIND[video.kind]
 			const imageUrl = `https:${video.imageUrl}`
-			return InlineQueryResultBuilder.videoHtml(
-				`video ${video.id}`,
-				title,
-				video.url,
-				imageUrl,
-			).text(`${title}\n${video.url}`)
+			return InlineQueryResultBuilder.videoHtml(`video ${video.id}`, title, video.url, imageUrl, {
+				description: video.url,
+			}).text(`${title}\n${video.url}`)
 		})
 
 	await ctx.answerInlineQuery(results, {

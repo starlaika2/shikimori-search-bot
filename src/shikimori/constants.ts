@@ -27,7 +27,7 @@ export const VIDEO_KIND: Record<VideoKindEnum, string> = {
 	clip: 'Клип',
 	cm: 'Реклама',
 	ed: 'ED',
-	episode_preview: '',
+	episode_preview: 'Превью эпизода',
 	op: 'OP',
 	op_ed_clip: 'OP&ED',
 	other: 'Другое',
