@@ -10,6 +10,10 @@ setupDayjs()
 const bot = new Bot(env.BOT_TOKEN)
 await bot.init()
 
+bot.catch(({ error }) => {
+	console.error(error)
+})
+
 setupMiddlewares(bot)
 setupHandlers(bot)
 
