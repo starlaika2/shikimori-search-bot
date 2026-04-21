@@ -22,6 +22,7 @@ export const getAnimeInfo = shikimori('animes', {
 		russian: true,
 		isCensored: true,
 		kind: true,
+		status: true,
 		episodes: true,
 		episodesAired: true,
 		nextEpisodeAt: true,
